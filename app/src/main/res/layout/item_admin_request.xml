@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/adminWasteTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Organic Waste"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#E74C3C"/>
+
+        <TextView
+            android:id="@+id/adminAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/adminStatusText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pending"
+                android:textSize="12sp"
+                android:textColor="#E74C3C"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/adminTimestampText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2025-11-01"
+                android:textSize="12sp"
+                android:textColor="#7F8C8D"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/updateStatusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Status"
+            android:textSize="14sp"
+            android:backgroundTint="#3498DB"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
