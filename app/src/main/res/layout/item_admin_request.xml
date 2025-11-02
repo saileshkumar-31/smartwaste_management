@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="12dp"
     app:cardElevation="4dp">
 
     <LinearLayout
@@ -13,56 +13,94 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/adminWasteTypeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Organic Waste"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#E74C3C"/>
-
-        <TextView
-            android:id="@+id/adminAddressText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"/>
-
+        <!-- Request ID and Status -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
             android:layout_marginBottom="8dp">
 
             <TextView
-                android:id="@+id/adminStatusText"
+                android:id="@+id/adminRequestId"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Pending"
-                android:textSize="12sp"
-                android:textColor="#E74C3C"
-                android:textStyle="bold"/>
+                android:text="Request #12345"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/adminTimestampText"
+                android:id="@+id/adminStatusText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2025-11-01"
+                android:text="Pending"
+                android:textColor="#FF9800"
                 android:textSize="12sp"
-                android:textColor="#7F8C8D"/>
+                android:background="#FFF3E0"
+                android:padding="6dp"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
 
+        <!-- User Email Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Email"
+            android:textColor="#757575"
+            android:textSize="11sp"
+            android:layout_marginBottom="2dp" />
+
+        <!-- User Email Value -->
+        <TextView
+            android:id="@+id/adminUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user@gmail.com"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Waste Type -->
+        <TextView
+            android:id="@+id/adminWasteTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plastic and Paper Waste"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/adminAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123 Main St, Bangalore"
+            android:textColor="#757575"
+            android:textSize="13sp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Timestamp -->
+        <TextView
+            android:id="@+id/adminTimestampText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nov 2, 2025 10:30 AM"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Update Status Button -->
         <Button
             android:id="@+id/updateStatusButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:text="Update Status"
-            android:textSize="14sp"
-            android:backgroundTint="#3498DB"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/blue_primary"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
