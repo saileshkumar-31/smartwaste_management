@@ -17,25 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartWaste">
 
-        <!-- ADD THIS META-DATA -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_REAL_MAPS_API_KEY_HERE" />
+            android:value="YOUR_API_KEY_FROM_GOOGLE_CLOUD_CONSOLE" />
 
+        <!-- Login first -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity" />
 
+        <!-- Main after login -->
+        <activity android:name=".MainActivity" />
+
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".RequestWasteActivity" />
         <activity android:name=".AdminMapActivity" />
         <activity android:name=".ViewRequestsActivity" />
     </application>
-
 
 </manifest>

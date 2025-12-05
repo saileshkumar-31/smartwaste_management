@@ -10,7 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,15 +33,9 @@ public class MainActivity extends AppCompatActivity {
         setupFab();
     }
 
-    // Decide if current user is admin or normal user
     private void setupRole() {
-        String adminEmail = "admin.smartwaste@gmail.com";   // fixed admin account
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            String currentEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-            isAdmin = currentEmail != null && currentEmail.equals(adminEmail);
-        } else {
-            isAdmin = false;
-        }
+        // Demo: false = user, true = admin
+        isAdmin = false;
     }
 
     private void setupBottomNav() {
@@ -50,37 +43,39 @@ public class MainActivity extends AppCompatActivity {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        int id = item.getItemId();
-                        if (id == R.id.nav_home) {
-                            // stay on home (current layout)
+
+                        int itemId = item.getItemId();  // get int id
+
+                        // REAL switch starts here
+                        if (itemId == R.id.nav_home) {
+
+                            // Stay on dashboard
                             return true;
-                        } else if (id == R.id.nav_requests) {
+
+                        } else if (itemId == R.id.nav_requests) {
+
                             if (isAdmin) {
-                                // Admin: open map with all user pins
-                                Intent intent = new Intent(MainActivity.this, AdminMapActivity.class);
-                                startActivity(intent);
+                                startActivity(new Intent(MainActivity.this, AdminMapActivity.class));
                             } else {
-                                // Normal user: open old request list screen
-                                Intent intent = new Intent(MainActivity.this, ViewRequestsActivity.class);
-                                startActivity(intent);
+                                startActivity(new Intent(MainActivity.this, ViewRequestsActivity.class));
                             }
                             return true;
-                        } else if (id == R.id.nav_profile) {
-                            // Open ProfileActivity (uses fragment_profile.xml)
-                            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                            startActivity(intent);
+
+                        } else if (itemId == R.id.nav_profile) {
+
+                            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                             return true;
                         }
+
                         return false;
                     }
                 });
     }
 
+
     private void setupFab() {
         fabNewRequest.setOnClickListener(v -> {
-            // Both admin and user create new request (demo mode)
-            Intent intent = new Intent(MainActivity.this, RequestWasteActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, RequestWasteActivity.class));
         });
     }
 }

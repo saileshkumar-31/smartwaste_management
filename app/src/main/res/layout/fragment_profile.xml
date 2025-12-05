@@ -2,173 +2,76 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        android:background="@android:color/white">
 
-        <!-- Profile Header -->
-        <androidx.cardview.widget.CardView
+        <!-- Title -->
+        <TextView
+            android:id="@+id/profileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="24dp" />
+
+        <!-- User name -->
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginBottom="8dp" />
+
+        <!-- User email -->
+        <TextView
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user@email.com"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Edit Profile -->
+        <Button
+            android:id="@+id/editProfileBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:elevation="4dp"
-            android:radius="12dp">
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:text="👤"
-                    android:textSize="50sp"
-                    android:gravity="center"
-                    android:background="#E3F2FD"
-                    android:layout_marginBottom="12dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="My Profile"
-                    android:textColor="#000000"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- User Details Card -->
-        <androidx.cardview.widget.CardView
+        <!-- My Requests -->
+        <Button
+            android:id="@+id/myRequestsBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:elevation="4dp"
-            android:radius="12dp">
+            android:text="My Requests"
+            android:textAllCaps="false"
+            android:layout_marginTop="12dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Personal Information"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Name -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textColor="#757575"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/editName"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:hint="Enter your name"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="16sp" />
-
-                <!-- Email (Read-only) -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="#757575"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp" />
-
-                <TextView
-                    android:id="@+id/profileEmailText"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="user@gmail.com"
-                    android:padding="12dp"
-                    android:background="#F5F5F5"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="16sp"
-                    android:gravity="center_vertical" />
-
-                <!-- Mobile Number -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mobile Number"
-                    android:textColor="#757575"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/editMobile"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:hint="Enter mobile number"
-                    android:inputType="phone"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginBottom="16dp"
-                    android:textSize="16sp" />
-
-                <!-- Address -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address"
-                    android:textColor="#757575"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/editAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:hint="Enter your address"
-                    android:gravity="top"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:textSize="16sp" />
-
-                <!-- Save Button -->
-                <Button
-                    android:id="@+id/saveProfileBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="Save Changes"
-                    android:textColor="#FFFFFF"
-                    android:backgroundTint="@color/blue_primary"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Logout Button -->
+        <!-- Logout -->
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:text="Logout"
-            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp"
             android:backgroundTint="#F44336"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>
